@@ -36,7 +36,7 @@ jobs:
             --self-contained ${{ matrix.self_contained }} `
             -o publish `
             -p:PublishSingleFile=true `
-            -p:EnableCompressionInSingleFile=true `
+            -p:EnableCompressionInSingleFile=${{ matrix.self_contained }} `
             -p:PublishReadyToRun=false `
             -p:PublishTrimmed=false `
             -p:DebugType=none `
