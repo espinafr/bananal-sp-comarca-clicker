@@ -1,0 +1,54 @@
+
+name: Buildar compacto
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        include:
+          - name: small
+            self_contained: false
+          - name: standalone
+            self_contained: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Publicar executável
+        shell: pwsh
+        run: |
+          dotnet publish crik/crik.csproj `
+            -c Release `
+            -r win-x64 `
+            --self-contained ${{ matrix.self_contained }} `
+            -o publish `
+            -p:PublishSingleFile=true `
+            -p:EnableCompressionInSingleFile=true `
+            -p:PublishReadyToRun=false `
+            -p:PublishTrimmed=false `
+            -p:DebugType=none `
+            -p:DebugSymbols=false
+
+      - name: Comprimir
+        shell: pwsh
+        run: |
+          Compress-Archive -Path publish/* `
+            -DestinationPath clicker-${{ matrix.name }}.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: clicker-${{ matrix.name }}-win-x64
+          path: clicker-${{ matrix.name }}.zip
