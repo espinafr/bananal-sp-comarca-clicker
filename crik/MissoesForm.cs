@@ -16,7 +16,7 @@ namespace crik
             mulaLabel.Text = $"{Globais.formatarQuantidade(Globais.Bananas)} bananas";
         }
 
-        public void ganhasteMula(int quantidade)
+        public void mudasteMula(int quantidade)
         {
             mulaLabel.Text = $"{Globais.formatarQuantidade(Globais.Bananas)} bananas";
         }
@@ -44,7 +44,7 @@ namespace crik
 
                     Globais.fireMissoes -= missao.Verificar;
 
-                    Globais.ganharMula(recompensa);
+                    Globais.mudarMula(recompensa);
 
                     missoesPanel.Controls.Remove(missao);
                     missao.Dispose();

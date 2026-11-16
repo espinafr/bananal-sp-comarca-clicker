@@ -66,7 +66,7 @@ namespace crik
             verButton.Name = "verButton";
             verButton.Size = new Size(90, 23);
             verButton.TabIndex = 3;
-            verButton.Text = "ver";
+            verButton.Text = "detalhes";
             verButton.UseVisualStyleBackColor = false;
             verButton.Click += verButton_Click;
             // 

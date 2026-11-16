@@ -13,17 +13,14 @@ namespace crik
         public static int ColaboradoresTempo { get; set; } = 3000;
 
         // eventos
-        public static event Action<int>? ganhouMula;
-        public static event Action? fireMissoes; // nada é mais eterno que o temporário
-        public static void ganharMula(int quantidade)
+        public static event Action<int>? mudouMula;
+        public static void mudarMula(int quantidade)
         {
-            if (quantidade <= 0)
-                throw new ArgumentOutOfRangeException(nameof(quantidade));
-
             Bananas += quantidade;
-            ganhouMula?.Invoke(quantidade);
             fireMissoes?.Invoke();
+            mudouMula?.Invoke(Bananas);
         }
+        public static event Action? fireMissoes; // nada é mais eterno que o temporário
 
         // funções
         public static string formatarQuantidade(int quantidade)

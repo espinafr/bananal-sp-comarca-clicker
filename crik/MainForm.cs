@@ -51,7 +51,7 @@ namespace crik
 
             await fireProgressBar();
 
-            Globais.ganharMula(Globais.Producao);
+            Globais.mudarMula(Globais.Producao);
             updateUI();
             farmarBtn.Enabled = true;
         }
@@ -73,9 +73,9 @@ namespace crik
             if (missoesFormObj == null || missoesFormObj.IsDisposed)
             {
                 missoesFormObj = new MissoesForm();
-                Globais.ganhouMula += missoesFormObj.ganhasteMula;
+                Globais.mudouMula += missoesFormObj.mudasteMula;
                 this.FormClosed += (sender, e) => missoesFormObj?.Close();
-                missoesFormObj.FormClosed += (s, args) => { Globais.ganhouMula -= missoesFormObj.ganhasteMula; missoesFormObj = null; };
+                missoesFormObj.FormClosed += (s, args) => { Globais.mudouMula -= missoesFormObj.mudasteMula; missoesFormObj = null; };
                 missoesFormObj.Show();
             }
             else
