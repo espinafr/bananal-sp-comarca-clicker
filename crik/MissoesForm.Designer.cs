@@ -1,4 +1,4 @@
-﻿namespace crik
+namespace crik
 {
     partial class MissoesForm
     {
@@ -31,17 +31,13 @@
             missoesPanel = new FlowLayoutPanel();
             missoesTituloLabel = new Label();
             mulaLabel = new Label();
-            panel1 = new Panel();
-            recompensaLabel = new Label();
-            missoesPanel.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // missoesPanel
             // 
+            missoesPanel.AutoScroll = true;
             missoesPanel.BackColor = Color.Transparent;
             missoesPanel.BorderStyle = BorderStyle.FixedSingle;
-            missoesPanel.Controls.Add(panel1);
             missoesPanel.Location = new Point(12, 60);
             missoesPanel.Name = "missoesPanel";
             missoesPanel.Size = new Size(776, 378);
@@ -75,26 +71,6 @@
             mulaLabel.TextAlign = ContentAlignment.MiddleRight;
             mulaLabel.SizeChanged += corrigirOffset;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.DarkOliveGreen;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(recompensaLabel);
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 100);
-            panel1.TabIndex = 0;
-            // 
-            // recompensaLabel
-            // 
-            recompensaLabel.AutoSize = true;
-            recompensaLabel.ForeColor = Color.Yellow;
-            recompensaLabel.Location = new Point(36, 52);
-            recompensaLabel.Name = "recompensaLabel";
-            recompensaLabel.Size = new Size(127, 15);
-            recompensaLabel.TabIndex = 0;
-            recompensaLabel.Text = "50 milhões de bananas";
-            // 
             // MissoesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -110,9 +86,6 @@
             Name = "MissoesForm";
             Text = "missões";
             Load += MissoesForm_Load;
-            missoesPanel.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -122,7 +95,5 @@
         private FlowLayoutPanel missoesPanel;
         private Label missoesTituloLabel;
         private Label mulaLabel;
-        private Panel panel1;
-        private Label recompensaLabel;
     }
 }

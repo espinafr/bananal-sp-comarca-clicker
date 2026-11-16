@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="MissaoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="MissaoCard.Designer.cs">
+      <DependentUpon>MissaoCard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="MissaoCard.resx">
+      <DependentUpon>MissaoCard.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

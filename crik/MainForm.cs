@@ -8,7 +8,6 @@ namespace crik
     public partial class mainForm : Form
     {
         private MissoesForm? missoesFormObj;
-        public event EventHandler<string>? ganhouMula;
 
         public mainForm()
         {
@@ -52,8 +51,7 @@ namespace crik
 
             await fireProgressBar();
 
-            Globais.Bananas += Globais.Producao;
-            ganhouMula?.Invoke(this, $"{Globais.formatarQuantidade(Globais.Bananas)} bananas");
+            Globais.ganharMula(Globais.Producao);
             updateUI();
             farmarBtn.Enabled = true;
         }
@@ -75,9 +73,9 @@ namespace crik
             if (missoesFormObj == null || missoesFormObj.IsDisposed)
             {
                 missoesFormObj = new MissoesForm();
-                this.ganhouMula += missoesFormObj.ganhasteMula;
+                Globais.ganhouMula += missoesFormObj.ganhasteMula;
                 this.FormClosed += (sender, e) => missoesFormObj?.Close();
-                missoesFormObj.FormClosed += (s, args) => { this.ganhouMula -= missoesFormObj.ganhasteMula; missoesFormObj = null; };
+                missoesFormObj.FormClosed += (s, args) => { Globais.ganhouMula -= missoesFormObj.ganhasteMula; missoesFormObj = null; };
                 missoesFormObj.Show();
             }
             else
@@ -87,3 +85,4 @@ namespace crik
         }
     }
 }
+
