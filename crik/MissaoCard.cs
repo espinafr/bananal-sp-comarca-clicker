@@ -6,26 +6,7 @@ namespace crik
     {
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string Titulo { get; private set; } = string.Empty;
-
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string Descricao { get; private set; } = string.Empty;
-
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int Recompensa { get; private set; }
-
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int Dificuldade { get; private set; }
-
-        private readonly Func<bool> Validador = () => false;
-
-        private readonly Action Recompensador = () => { };
-
-        private bool Completed = false;
-
+        public Missao? Missao { get; private set; }
         public MissaoCard()
         {
             InitializeComponent();
@@ -44,7 +25,7 @@ namespace crik
                     dificuldadeLabel.Text = "fácil";
                     break;
                 case 2:
-                    dificuldadeLabel.ForeColor = Color.Orange;
+                    dificuldadeLabel.ForeColor = Color.Chocolate;
                     dificuldadeLabel.Text = "razoável";
                     break;
                 case 3:
@@ -62,43 +43,33 @@ namespace crik
             }
         }
 
-        public MissaoCard(string titulo, string descricao, int recompensa, int dificuldade, Func<bool> validador, Action recompensador) : this()
+        public MissaoCard(Missao missao) : this()
         {
-            Titulo = titulo;
-            Descricao = descricao;
-            Recompensa = recompensa;
-            Dificuldade = dificuldade;
-            Validador = validador;
-            Recompensador = recompensador;
-
-            tituloLabel.Text = Titulo;
-            recompensaLabel.Text = $"{Globais.formatarQuantidade(Recompensa)} bananas";
+            ArgumentNullException.ThrowIfNull(missao);
+            Missao = missao;
+            tituloLabel.Text = missao.Titulo;
+            recompensaLabel.Text = $"{Globais.formatarQuantidade(missao.Recompensa)} bananas";
             Globais.autoEscalar(tituloLabel, 14f, .6f);
-            setarDificuldade(Dificuldade);
+            setarDificuldade(missao.Dificuldade);
+            missao.Concluida += AtualizarEstado;
+            Disposed += (_, _) => missao.Concluida -= AtualizarEstado;
+            AtualizarEstado();
+        }
+
+        private void AtualizarEstado()
+        {
+            if (Missao?.Completed == true)
+            {
+                verButton.Text = "Concluída";
+                verButton.BackColor = Color.Green;
+            }
         }
 
         private void verButton_Click(object? sender, EventArgs e)
         {
-            if (!Completed)
-            {
-                MessageBox.Show(FindForm(), $"{Descricao}\nRecompensa: {Globais.formatarQuantidade(Recompensa)} bananas", "Detalhes: " + Titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(FindForm(), "Esta missão já foi concluída.", "Missão Concluída", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        public void Verificar()
-        {
-            if (!Completed && Validador())
-            {
-                Completed = true;
-                verButton.Text = "Concluída";
-                verButton.BackColor = Color.Green;
-
-                Recompensador();
-            }
+            if (Missao is null) return;
+            MessageBox.Show(FindForm(), $"{(Missao.Completed ? "Esta missão já foi concluída.\n\n" : "")}{Missao.Descricao}\nRecompensa: {Globais.formatarQuantidade(Missao.Recompensa)} bananas",
+                "Detalhes: " + Missao.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

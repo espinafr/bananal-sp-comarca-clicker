@@ -48,7 +48,7 @@ namespace crik
             // 
             dificuldadeLabel.BackColor = Color.Transparent;
             dificuldadeLabel.Font = new Font("Georgia", 9F, FontStyle.Italic);
-            dificuldadeLabel.ForeColor = Color.Green;
+            dificuldadeLabel.ForeColor = Color.Chocolate;
             dificuldadeLabel.Location = new Point(3, 81);
             dificuldadeLabel.Name = "dificuldadeLabel";
             dificuldadeLabel.Size = new Size(181, 17);
@@ -59,14 +59,14 @@ namespace crik
             // verButton
             // 
             verButton.BackColor = Color.Bisque;
-            verButton.FlatStyle = FlatStyle.Popup;
+            verButton.FlatStyle = FlatStyle.Flat;
             verButton.Font = new Font("Georgia", 8.25F, FontStyle.Bold);
             verButton.ForeColor = Color.FromArgb(0, 64, 0);
             verButton.Location = new Point(50, 55);
             verButton.Name = "verButton";
             verButton.Size = new Size(90, 23);
             verButton.TabIndex = 3;
-            verButton.Text = "ver";
+            verButton.Text = "detalhes";
             verButton.UseVisualStyleBackColor = false;
             verButton.Click += verButton_Click;
             // 
