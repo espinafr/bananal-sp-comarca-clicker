@@ -23,7 +23,7 @@ namespace crik
             mulaLabel.Text = $"{Globais.formatarQuantidade(Globais.Bananas)} bananas";
         }
 
-        public void ganhasteMula(int quantidade)
+        public void mudasteMula(int quantidade)
         {
             mulaLabel.Text = $"{Globais.formatarQuantidade(Globais.Bananas)} bananas";
         }

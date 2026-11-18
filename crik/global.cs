@@ -32,8 +32,8 @@ namespace crik
         public static void mudarMula(int quantidade)
         {
             Bananas += quantidade;
-            mudouMula?.Invoke(quantidade);
             fireMissoes?.Invoke();
+            mudouMula?.Invoke(Bananas);
         }
         public static void produzirColaboradores()
         {
