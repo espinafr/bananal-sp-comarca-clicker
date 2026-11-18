@@ -1,10 +1,19 @@
-# v0.0.1.2
+# v0.1.0.1
 
-A primeira versão com release funcional (espero).
+Sou tão genial que esqueci de atualizar as notas de atualização rsrsrs.
 
-Por enquanto o programa se encontra na mais pura alpha que pode existir. Nessa versão foi criada as funcionalidades básicas de um clicker e um sistema primitivo de missões.
+Essa versão trás a primeira versão da loja, com por enquanto só a opção de comprar colaboradores. Falando em colaboradores, eles também funcionam agora.
 
-Algo que eu gostaria de pontuar é que esse projeto está sendo feito para fins de diversão e estudo de C#. Você, caro usuário que se importou o suficiente para ler essa notas, não espere algo tão rebuscado. E sobre o uso de IA, que eu também gostaria de pontuar, ele tem sido mínimo. Como esse projeto é para estudo não faria sentido vibecodar tudo e alegar agora saber escrever C#, então estou limitando o uso de IA para correção de bugs, dúvidas sobre a estrutura da linguagem e .NET, mocks e outras coisinhas menores...
+O código ta ficando uma baguncinha mas o joguinho está tomando forma, apesar de no fim das contas ser só um clicker. Notas completas:
+
+- Adiciona shop
+- Adiciona opção de comprar colaboradores no shop
+- Colaboradores funcionais
+- Missões agora não resetam ao reiniciar a página
+- Missões da série "guardando bananas" não desaparecem depois de concluir a anterior
+- Remove evento de "ganharMula" e transforma em "mudouMula"
+- Adiciona outros eventos sobre mudança de quantidades, como para colaboradores e produção (apesar de que produção só existe o evento e não o handler/helper)
+
 
 O jogo é feito exclusivamente para *Windows 64 bits* e existem duas versões de executável disponíveis:
 
