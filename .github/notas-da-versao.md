@@ -1,4 +1,7 @@
-# v0.1.0.1
+# v0.1.1
+Hotix: `MissoesForm.cs` ainda usava `ganhasteMula` ao invés de `mudasteMula`.
+
+# v0.1.0
 
 Sou tão genial que esqueci de atualizar as notas de atualização rsrsrs.
 

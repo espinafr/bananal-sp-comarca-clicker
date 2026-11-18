@@ -9,11 +9,11 @@ namespace crik
             InitializeComponent();
             RenderizarMissoes();
             Globais.Missoes.ListChanged += MissoesAlteradas;
-            Globais.mudouMula += ganhasteMula;
+            Globais.mudouMula += mudasteMula;
             Disposed += (_, _) =>
             {
                 Globais.Missoes.ListChanged -= MissoesAlteradas;
-                Globais.mudouMula -= ganhasteMula;
+                Globais.mudouMula -= mudasteMula;
             };
         }
 
