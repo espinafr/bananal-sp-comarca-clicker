@@ -84,7 +84,7 @@ namespace crik
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MissoesForm";
-            Text = "missões";
+            Text = "coreto das missões";
             Load += MissoesForm_Load;
             ResumeLayout(false);
             PerformLayout();

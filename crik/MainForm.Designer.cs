@@ -79,6 +79,7 @@
             shopBtn.BackColor = Color.FromArgb(255, 255, 192);
             shopBtn.Name = "shopBtn";
             shopBtn.UseVisualStyleBackColor = false;
+            shopBtn.Click += shopBtn_Click;
             // 
             // mainForm
             // 

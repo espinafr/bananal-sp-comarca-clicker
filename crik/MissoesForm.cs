@@ -7,7 +7,14 @@ namespace crik
         public MissoesForm()
         {
             InitializeComponent();
-            AdicionarMissao();
+            RenderizarMissoes();
+            Globais.Missoes.ListChanged += MissoesAlteradas;
+            Globais.mudouMula += ganhasteMula;
+            Disposed += (_, _) =>
+            {
+                Globais.Missoes.ListChanged -= MissoesAlteradas;
+                Globais.mudouMula -= ganhasteMula;
+            };
         }
 
         private void MissoesForm_Load(object sender, EventArgs e)
@@ -23,45 +30,29 @@ namespace crik
 
         private void corrigirOffset(object sender, EventArgs e)
         {
-            mulaLabel.Left = mulaBordaDireita - mulaLabel.Width;
+            mulaLabel.Left = Globais.corrigirOffset(mulaLabel, mulaBordaDireita);
         }
 
-        public void AdicionarMissao(int meta = 200, int dificuldade = 0)
+        private void MissoesAlteradas(object? sender, System.ComponentModel.ListChangedEventArgs e)
         {
-            int recompensa = meta / 3;
-            MissaoCard? missao = null;
+            RenderizarMissoes();
+        }
 
-            missao = new MissaoCard(
-                $"guardando bananas{(dificuldade > 0 ? $" {dificuldade + 1}" : "")}",
-                $"Junte {Globais.formatarQuantidade(meta)} bananas.",
-                recompensa,
-                dificuldade,
-                () => Globais.Bananas >= meta,
-                () =>
-                {
-                    if (missao is null)
-                        return;
+        private void RenderizarMissoes()
+        {
+            missoesPanel.SuspendLayout();
+            try
+            {
+                while (missoesPanel.Controls.Count > 0)
+                    missoesPanel.Controls[0].Dispose();
 
-                    Globais.fireMissoes -= missao.Verificar;
-
-                    Globais.ganharMula(recompensa);
-
-                    missoesPanel.Controls.Remove(missao);
-                    missao.Dispose();
-
-                    double proximaMeta = Math.Ceiling(Math.Pow(meta, 1.5));
-
-                    if (proximaMeta <= int.MaxValue)
-                    {
-                        AdicionarMissao(
-                            (int)proximaMeta,
-                            Math.Min(dificuldade + 1, 5));
-                    }
-                });
-
-            Globais.fireMissoes += missao.Verificar;
-            missoesPanel.Controls.Add(missao);
+                foreach (var missao in Globais.Missoes)
+                    missoesPanel.Controls.Add(new MissaoCard(missao));
+            }
+            finally
+            {
+                missoesPanel.ResumeLayout();
+            }
         }
     }
 }
-

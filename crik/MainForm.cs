@@ -8,10 +8,22 @@ namespace crik
     public partial class mainForm : Form
     {
         private MissoesForm? missoesFormObj;
+        private LojaForm? lojaFormObj;
+        private readonly System.Windows.Forms.Timer colaboradoresTimer;
 
         public mainForm()
         {
             InitializeComponent();
+            components ??= new System.ComponentModel.Container();
+            colaboradoresTimer = new System.Windows.Forms.Timer(components);
+            colaboradoresTimer.Tick += (_, _) =>
+            {
+                colaboradoresTimer.Interval = Globais.ColaboradoresTempo;
+                Globais.produzirColaboradores();
+            };
+            Globais.InicializarMissoes();
+            Globais.mudouColaboradores += (quantidade) => updateUI();
+            Globais.mudouMula += (quantidade) => updateUI();
         }
 
         private async Task fireProgressBar()
@@ -51,37 +63,41 @@ namespace crik
 
             await fireProgressBar();
 
-            Globais.ganharMula(Globais.Producao);
+            Globais.mudarMula(Globais.Producao);
             updateUI();
             farmarBtn.Enabled = true;
-        }
-
-        private void mulaLabel_Click(object sender, EventArgs e)
-        {
-            Globais.Bananas += 1000;
-            updateUI();
         }
 
         private void mainForm_Load(object sender, EventArgs e)
         {
             farmBar.Value = 0;
             updateUI();
+            colaboradoresTimer.Interval = Globais.ColaboradoresTempo;
+            colaboradoresTimer.Start();
+        }
+
+        private void openNcloseForm<T>(ref T? form) where T : Form, new()
+        {
+            if (form == null || form.IsDisposed)
+            {
+                form = new T();
+                form.Show(this);
+            }
+            else
+            {
+                form.Close();
+                if (form.IsDisposed) form = null;
+            }
         }
 
         private void missoesBtn_Click(object sender, EventArgs e)
         {
-            if (missoesFormObj == null || missoesFormObj.IsDisposed)
-            {
-                missoesFormObj = new MissoesForm();
-                Globais.ganhouMula += missoesFormObj.ganhasteMula;
-                this.FormClosed += (sender, e) => missoesFormObj?.Close();
-                missoesFormObj.FormClosed += (s, args) => { Globais.ganhouMula -= missoesFormObj.ganhasteMula; missoesFormObj = null; };
-                missoesFormObj.Show();
-            }
-            else
-            {
-                missoesFormObj.Close();
-            }
+            openNcloseForm(ref missoesFormObj);
+        }
+
+        private void shopBtn_Click(object sender, EventArgs e)
+        {
+            openNcloseForm(ref lojaFormObj);
         }
     }
 }

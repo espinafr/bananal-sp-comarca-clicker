@@ -4,27 +4,64 @@ namespace crik
 {
     public static class Globais
     {
+        public static System.ComponentModel.BindingList<Missao> Missoes { get; } = new();
+        private static bool missoesInicializadas;
+
+        public static void InicializarMissoes()
+        {
+            if (missoesInicializadas) return;
+            missoesInicializadas = true;
+            AdicionarMissao();
+        }
+
         // variáveis
         public static int Bananas { get; set; } = 0;
         public static int Producao { get; set; } = 1323;
         public static int ProducaoTempo { get; set; } = 1000;
         public static int Colaboradores { get; set; } = 0;
+        public static float ColaboradoresTaxaAumento { get; set; } = 0.1f;
         public static int ColaboradoresCusto { get; set; } = 50;
-        public static int ColaboradoresTempo { get; set; } = 3000;
+        public static int ColaboradoresTempo { get; set; } = 5000;
+        public static int ColaboradoresProducao { get; set; } = 1;
 
         // eventos
-        public static event Action<int>? ganhouMula;
+        public static event Action<int>? mudouMula;
+        public static event Action<int>? mudouProducao;
+        public static event Action<int>? mudouColaboradores;
         public static event Action? fireMissoes; // nada é mais eterno que o temporário
-        public static void ganharMula(int quantidade)
+        public static void mudarMula(int quantidade)
         {
-            if (quantidade <= 0)
-                throw new ArgumentOutOfRangeException(nameof(quantidade));
-
             Bananas += quantidade;
-            ganhouMula?.Invoke(quantidade);
+            mudouMula?.Invoke(quantidade);
             fireMissoes?.Invoke();
         }
+        public static void produzirColaboradores()
+        {
+            int quantidade = Colaboradores * ColaboradoresProducao;
+            if (quantidade > 0) mudarMula(quantidade);
+        }
 
+        public static bool comprar(int custo, Action? aoComprar = null)
+        {
+            if (custo < 0) throw new ArgumentOutOfRangeException(nameof(custo));
+            if (Bananas < custo) return false;
+
+            Bananas -= custo;
+            aoComprar?.Invoke();
+            mudouMula?.Invoke(-custo);
+            fireMissoes?.Invoke();
+            return true;
+        }
+        public static bool comprarColaboradores(int quantidade, int custo)
+        {
+            if (quantidade <= 0) throw new ArgumentOutOfRangeException(nameof(quantidade));
+
+            return comprar(custo, () =>
+            {
+                Colaboradores += quantidade;
+                mudouColaboradores?.Invoke(quantidade);
+            });
+        }
         // funções
         public static string formatarQuantidade(int quantidade)
         {
@@ -74,6 +111,31 @@ namespace crik
             {
                 controle.Font = new Font(controle.Font.FontFamily, Math.Max(currentSize, tamanhoMinimo), controle.Font.Style);
             }
+        }
+        public static void AdicionarMissao(int meta = 200, int dificuldade = 0)
+        {
+            int recompensa = meta / 3;
+            Missao? missao = null;
+            missao = new Missao(
+                $"guardando bananas{(dificuldade > 0 ? $" {dificuldade + 1}" : "")}",
+                $"Junte {formatarQuantidade(meta)} bananas.",
+                recompensa, dificuldade,
+                () => Bananas >= meta,
+                () =>
+                {
+                    //Missoes.Remove(missao!);
+                    //missao!.Dispose();
+                    mudarMula(recompensa);
+
+                    double proximaMeta = Math.Ceiling(Math.Pow(meta, 1.5));
+                    if (proximaMeta <= int.MaxValue)
+                        AdicionarMissao((int)proximaMeta, Math.Min(dificuldade + 1, 5));
+                });
+            Missoes.Insert(0, missao);
+        }
+        public static int corrigirOffset(Label labelObj, int direita)
+        {
+            return direita - labelObj.Width;
         }
     }
 }

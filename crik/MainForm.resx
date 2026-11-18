@@ -117,169 +117,169 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;detalhesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="mulaLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Snap ITC, 27.75pt, style=Italic</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="progressBar1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;shopBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;farmBar.Name" xml:space="preserve">
     <value>farmBar</value>
   </data>
-  <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 92</value>
   </data>
-  <data name="missoesBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;detalhesLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;mulaLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="mulaLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="farmBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 92</value>
-  </data>
-  <data name="farmBar.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;missoesBtn.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="missoesBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>414, 511</value>
   </data>
-  <data name="&gt;&gt;progressBar1.Name" xml:space="preserve">
-    <value>progressBar1</value>
-  </data>
-  <data name="&gt;&gt;detalhesLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mulaLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;farmTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;progressBar1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>501, 546</value>
-  </data>
-  <data name="&gt;&gt;shopBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;farmarBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;farmarBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mulaLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 9</value>
-  </data>
-  <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 92</value>
-  </data>
-  <data name="&gt;&gt;missoesBtn.Name" xml:space="preserve">
-    <value>missoesBtn</value>
-  </data>
-  <data name="&gt;&gt;detalhesLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;farmBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;shopBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;shopBtn.Name" xml:space="preserve">
-    <value>shopBtn</value>
-  </data>
-  <data name="mulaLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 80</value>
-  </data>
-  <data name="&gt;&gt;farmBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>mainForm</value>
-  </data>
-  <data name="&gt;&gt;farmTimer.Name" xml:space="preserve">
-    <value>farmTimer</value>
-  </data>
-  <data name="detalhesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 507</value>
-  </data>
-  <data name="shopBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;progressBar1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>registro clicker</value>
-  </data>
-  <data name="farmarBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 128</value>
-  </data>
-  <data name="&gt;&gt;farmBar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="farmarBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mulaLabel.Text" xml:space="preserve">
-    <value>0 bananas</value>
-  </data>
-  <data name="&gt;&gt;farmarBtn.Name" xml:space="preserve">
-    <value>farmarBtn</value>
-  </data>
-  <data name="&gt;&gt;missoesBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="&gt;&gt;farmarBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;mulaLabel.Name" xml:space="preserve">
     <value>mulaLabel</value>
   </data>
-  <data name="detalhesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="&gt;&gt;mulaLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;farmarBtn.Name" xml:space="preserve">
+    <value>farmarBtn</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>501, 546</value>
+  </data>
+  <data name="&gt;&gt;detalhesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="farmBar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mulaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 9</value>
+  </data>
+  <data name="&gt;&gt;shopBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mulaLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Snap ITC, 27.75pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;shopBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>registro clicker</value>
   </data>
   <data name="&gt;&gt;mulaLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="shopBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 479</value>
-  </data>
-  <data name="&gt;&gt;missoesBtn.ZOrder" xml:space="preserve">
+  <data name="progressBar1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;detalhesLabel.Name" xml:space="preserve">
-    <value>detalhesLabel</value>
+  <data name="farmarBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;farmarBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="shopBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="mulaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 80</value>
+  </data>
+  <data name="&gt;&gt;farmBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;missoesBtn.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;missoesBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>pt-BR</value>
-  </metadata>
+  <data name="mulaLabel.Text" xml:space="preserve">
+    <value>0 bananas</value>
+  </data>
+  <data name="&gt;&gt;farmarBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;farmTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;missoesBtn.Name" xml:space="preserve">
+    <value>missoesBtn</value>
+  </data>
+  <data name="&gt;&gt;shopBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="shopBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 479</value>
+  </data>
+  <data name="&gt;&gt;farmBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Name" xml:space="preserve">
+    <value>progressBar1</value>
+  </data>
+  <data name="missoesBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="farmarBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 128</value>
+  </data>
+  <data name="farmBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 92</value>
+  </data>
+  <data name="&gt;&gt;detalhesLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>mainForm</value>
+  </data>
+  <data name="&gt;&gt;shopBtn.Name" xml:space="preserve">
+    <value>shopBtn</value>
+  </data>
+  <data name="detalhesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 507</value>
+  </data>
+  <data name="detalhesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;farmTimer.Name" xml:space="preserve">
+    <value>farmTimer</value>
+  </data>
+  <data name="&gt;&gt;detalhesLabel.Name" xml:space="preserve">
+    <value>detalhesLabel</value>
+  </data>
+  <data name="mulaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;farmarBtn.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>pt-BR</value>
   </metadata>
   <metadata name="farmTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
